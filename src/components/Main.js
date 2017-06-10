@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+
 
 class Main extends React.Component {
 
@@ -10,12 +10,30 @@ class Main extends React.Component {
     };
   }
 
+  componentDidMount() {
+
+    let rand = Math.floor(Math.random()*25);
+    let gifURL;
+    let img = document.getElementById("main-gif");
+
+    fetch("http://api.giphy.com/v1/gifs/search?q=cat&api_key=dc6zaTOxFJmzC")
+    .then((response) => {
+      return response.json();})
+    .then((json) => {
+      console.log("here!");
+      gifURL = json.data[rand].images.original.url;
+      console.log(gifURL);
+      img.src = gifURL;
+    });
+
+  }
+
 
   render() {
     return(
       <div>
-        <p>HELLO THERE</p>
-        <li><Link to="/about">About</Link></li>
+        <h1 id="main-h1">Cat GIFs!</h1>
+        <img id="main-gif"/>
       </div>
     );
   }
