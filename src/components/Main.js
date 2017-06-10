@@ -13,7 +13,7 @@ class Main extends React.Component {
 
   componentDidMount() {
     console.log(this.props);
-    this.props.requestTotalCount();
+    // this.props.requestTotalCount();
 
     let rand = Math.floor(Math.random()*4998);
     let gifURL;
