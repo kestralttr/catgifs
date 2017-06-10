@@ -7,10 +7,13 @@ export const requestTotalCount = () => ({
   type: REQUEST_TOTAL_COUNT
 });
 
-export const receiveTotalCount = (count) => ({
-  type: RECEIVE_TOTAL_COUNT,
-  count: count
-});
+export const receiveTotalCount = (json) => {
+console.log(json);
+  return {
+    type: RECEIVE_TOTAL_COUNT,
+    json: json
+  };
+};
 
 export const requestGIF = (offset) => ({
   type: REQUEST_GIF,

@@ -12,6 +12,8 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props);
+    this.props.requestTotalCount();
 
     let rand = Math.floor(Math.random()*25);
     let gifURL;
@@ -21,9 +23,7 @@ class Main extends React.Component {
     .then((response) => {
       return response.json();})
     .then((json) => {
-      console.log("here!");
       gifURL = json.data[rand].images.original.url;
-      console.log(gifURL);
       img.src = gifURL;
     });
 
@@ -31,18 +31,22 @@ class Main extends React.Component {
 
   generateNewGIF(e) {
     e.preventDefault();
+    console.log(this.props);
 
     let rand = Math.floor(Math.random()*25);
     let gifURL;
     let img = document.getElementById("main-gif");
+    let totalCount;
 
     fetch("http://api.giphy.com/v1/gifs/search?q=cat&api_key=dc6zaTOxFJmzC")
     .then((response) => {
       return response.json();})
     .then((json) => {
-      console.log("here!");
+
       gifURL = json.data[rand].images.original.url;
-      console.log(gifURL);
+      totalCount = json.pagination.total_count;
+
+      console.log("total count: ", totalCount);
       img.src = gifURL;
     });
   }

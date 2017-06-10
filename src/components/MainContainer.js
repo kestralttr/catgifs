@@ -1,17 +1,14 @@
 import {connect} from 'react-redux';
 import Main from './Main';
+import {requestTotalCount} from "../actions/mainActions";
 
-function mapStateToProps(state, props) {
-  return {
+const mapStateToProps = state => ({
+  state:state
+});
 
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-
-  };
-}
+const mapDispatchToProps = dispatch => ({
+  requestTotalCount: () => dispatch(requestTotalCount())
+});
 
 export default connect(
   mapStateToProps,
