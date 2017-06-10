@@ -1,4 +1,4 @@
-import {RECEIVE_TOTAL_COUNT} from '../actions/mainActions';
+import {RECEIVE_TOTAL_COUNT, RECEIVE_GIF} from '../actions/mainActions';
 
 const _defaultState = {
   count: null,
@@ -6,7 +6,7 @@ const _defaultState = {
 };
 
 const MainReducer = (state = _defaultState, action) => {
-  let newState = {count: null, gifURL: null};
+  let newState = {count: state.count, gifURL: state.gifURL};
 
   console.log("reducer action type: ", action.type);
 
@@ -17,6 +17,11 @@ const MainReducer = (state = _defaultState, action) => {
   switch (action.type) {
     case RECEIVE_TOTAL_COUNT:
       newState["count"] = action.json.pagination.total_count;
+      console.log("newState: ", newState);
+      return newState;
+    case RECEIVE_GIF:
+    console.log(action.json);
+      newState["gifURL"] = action.json.data[0].images.original.url;
       console.log("newState: ", newState);
       return newState;
     default:

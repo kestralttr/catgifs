@@ -20,7 +20,7 @@ export const requestGIF = (offset) => ({
   offset: offset
 });
 
-export const receiveGIF = (data) => ({
+export const receiveGIF = (json) => ({
   type: RECEIVE_GIF,
-  data: data
+  json: json
 });
