@@ -65,7 +65,7 @@ class Main extends React.Component {
         <button onClick={this.generateNewGIF} id="new-gif-button">New GIF!</button>
         <div id="drawers-spacer"></div>
         <div id="drawers">
-          <img id="cat-frame-background"></img>
+          <img id="cat-frame-background" alt=""></img>
           <img id="cat-frame-cat" alt="frame cat" src="../../images/catframe_cat1.png" />
           <img id="cat-frame" alt="cat frame" src="../../images/catframe1.png"/>
         </div>
