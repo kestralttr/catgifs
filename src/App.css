@@ -5,14 +5,17 @@
 
 body {
   background: url("/images/floral3.jpg") repeat fixed center;
+  text-align: center;
+  height:770px;
 }
 
 #main-container {
   text-align: center;
+  height:100%;
+  position: relative;
 }
 
 #main-title {
-  width:400px;
   height:100px;
   background: url("/images/title3.png") no-repeat center;
   margin: 0 auto;
@@ -40,17 +43,16 @@ body {
 }
 
 #drawers-spacer {
-  height:100px;
+  height:400px;
   width:30px;
   margin: 0 auto;
-  /*background-color: red;*/
 }
 
 #cat-frame {
   position: absolute;
   width:100px;
   bottom:94%;
-  right:300px;
+  /*right:300px;*/
 }
 
 #cat-frame-background {
@@ -58,7 +60,7 @@ body {
   width:60px;
   height:39px;
   bottom:104%;
-  right:320px;
+  margin-left:20px;
   background-color: rgb(255,255,255);
 }
 
@@ -66,14 +68,15 @@ body {
   position: absolute;
   width:60px;
   bottom:104%;
-  right:320px;
+  padding-left:20px;
 }
 
 #drawers {
-  /*position: absolute;
-  bottom:0;*/
-  position: relative;
+  position: absolute;
+  bottom:0;
+  /*position: relative;*/
   width:100%;
+  margin: 0 auto;
   height:270px;
   background: url("/images/drawers1.png") no-repeat bottom;
 }
@@ -135,4 +138,28 @@ animation:rainbow 1s infinite;
 80% {background-color: #0000ff;}
 90% {background-color: #8000ff;}
 100% {background-color: #ff0080;}
+}
+
+@media (max-width:400px) {
+  #main-title {
+    background-size: contain;
+  }
+  #main-gif {
+    background-size: contain;
+    width:150px;
+  }
+}
+
+/*@media (min-height:730px) {
+  #drawers-spacer {
+    height:150px;
+    width:100px;
+    margin: 0 auto;
+  }
+}*/
+
+@media (min-height:770px) {
+  #main-container {
+    position: static;
+  }
 }
