@@ -21,7 +21,7 @@ const MainReducer = (state = _defaultState, action) => {
       return newState;
     case RECEIVE_GIF:
     console.log(action.json);
-      newState["gifURL"] = action.json.data[0].images.original.url;
+      newState["gifURL"] = action.json.data[0].images.fixed_height.url;
       console.log("newState: ", newState);
       return newState;
     default:

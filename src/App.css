@@ -1,24 +1,53 @@
-.App {
+
+/*html {
+  height: 100%;
+}*/
+
+body {
+  background: url("/images/floral3.jpg") repeat fixed center;
+}
+
+#main-container {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#main-title {
+  width:400px;
+  height:100px;
+  background: url("/images/title3.png") no-repeat center;
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+#main-gif {
+  max-height:200px;
+  border: 30px double orange;
+  border-image: url("/images/frame1.png") 18% 15% 18% 15% stretch;
+  box-shadow: 2px 2px 2px #000;
 }
 
-.App-intro {
-  font-size: large;
+#new-gif-button {
+  background: url("/images/plate3.png") no-repeat center;
+  width:100px;
+  height:30px;
+  margin:0 auto;
+  margin-top:10px;
+  border-radius: 5px;
+  line-height: 30px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+#drawers-spacer {
+  height:100px;
+  width:30px;
+  margin: 0 auto;
+  /*background-color: red;*/
+}
+
+#drawers {
+  /*position: absolute;
+  bottom:0;*/
+  width:100%;
+  height:270px;
+  background: url("/images/drawers1.png") no-repeat bottom;
 }

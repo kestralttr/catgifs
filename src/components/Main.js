@@ -18,6 +18,7 @@ class Main extends React.Component {
     let rand = Math.floor(Math.random()*4998);
     let gifURL;
     let img = document.getElementById("main-gif");
+    img.style.opacity = 0;
 
     fetch("http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC&limit=1&offset=" + rand.toString())
     .then((response) => {
@@ -25,6 +26,9 @@ class Main extends React.Component {
     .then((json) => {
       gifURL = json.data[0].images.original.url;
       img.src = gifURL;
+      img.onload = function() {
+        img.style.opacity = 1;
+      };
     });
 
   }
@@ -42,7 +46,6 @@ class Main extends React.Component {
     console.log(this.props);
 
     let rand = Math.floor(Math.random()*4998);
-
     this.props.requestGIF(rand);
 
   }
@@ -50,10 +53,12 @@ class Main extends React.Component {
 
   render() {
     return(
-      <div>
-        <h1 id="main-h1">Cat GIFs!</h1>
+      <div id="main-container">
+        <div id="main-title"></div>
         <img id="main-gif" alt="Cat Pic"/><br></br>
-        <button onClick={this.generateNewGIF} id="new-gif-button">New GIF!</button>
+        <div onClick={this.generateNewGIF} id="new-gif-button">New GIF!</div>
+        <div id="drawers-spacer"></div>
+        <div id="drawers"></div>
       </div>
     );
   }
