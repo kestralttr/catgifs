@@ -62,7 +62,7 @@ class Main extends React.Component {
       <div id="main-container">
         <div id="main-title"></div>
         <img id="main-gif" alt="Cat Pic"/><br></br>
-        <div onClick={this.generateNewGIF} id="new-gif-button">New GIF!</div>
+        <button onClick={this.generateNewGIF} id="new-gif-button">New GIF!</button>
         <div id="drawers-spacer"></div>
         <div id="drawers">
           <div id="cat-frame-background"></div>
