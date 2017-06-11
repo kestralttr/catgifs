@@ -6,13 +6,14 @@
 body {
   background: url("/images/floral3.jpg") repeat fixed center;
   text-align: center;
-  height:770px;
+  height:100%;
 }
 
 #main-container {
   text-align: center;
   height:100%;
   position: relative;
+  /*height:770px;*/
 }
 
 #main-title {
@@ -147,6 +148,9 @@ animation:rainbow 1s infinite;
   #main-gif {
     background-size: contain;
     width:150px;
+  }
+  #drawers-spacer {
+    height:400px;
   }
 }
 
