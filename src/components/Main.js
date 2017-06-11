@@ -38,6 +38,10 @@ class Main extends React.Component {
     if(newProps.state.main.gifURL && newProps.state.main.gifURL !== this.props.state.main.gifURL) {
       let img = document.getElementById("main-gif");
       img.src = newProps.state.main.gifURL;
+      img.onload = function() {
+        let spinner = document.getElementById("cat-frame-background");
+        spinner.className = "";
+      };
     }
   }
 
@@ -46,6 +50,8 @@ class Main extends React.Component {
     console.log(this.props);
 
     let rand = Math.floor(Math.random()*4998);
+    let spinner = document.getElementById("cat-frame-background");
+    spinner.className = "rainbow";
     this.props.requestGIF(rand);
 
   }
@@ -58,7 +64,11 @@ class Main extends React.Component {
         <img id="main-gif" alt="Cat Pic"/><br></br>
         <div onClick={this.generateNewGIF} id="new-gif-button">New GIF!</div>
         <div id="drawers-spacer"></div>
-        <div id="drawers"></div>
+        <div id="drawers">
+          <div id="cat-frame-background"></div>
+          <img id="cat-frame-cat" alt="frame cat" src="../../images/catframe_cat1.png" />
+          <img id="cat-frame" alt="cat frame" src="../../images/catframe1.png"/>
+        </div>
       </div>
     );
   }

@@ -44,10 +44,93 @@ body {
   /*background-color: red;*/
 }
 
+#cat-frame {
+  position: absolute;
+  width:100px;
+  bottom:94%;
+  right:300px;
+}
+
+#cat-frame-background {
+  position: absolute;
+  width:60px;
+  height:39px;
+  bottom:104%;
+  right:320px;
+  background-color: rgb(255,255,255);
+}
+
+#cat-frame-cat {
+  position: absolute;
+  width:60px;
+  bottom:104%;
+  right:320px;
+}
+
 #drawers {
   /*position: absolute;
   bottom:0;*/
+  position: relative;
   width:100%;
   height:270px;
   background: url("/images/drawers1.png") no-repeat bottom;
+}
+
+.rainbow {
+-webkit-animation:rainbow 1s infinite;
+-ms-animation:rainbow 1s infinite;
+-o-animation:rainbow 1s infinite;
+animation:rainbow 1s infinite;
+}
+@-webkit-keyframes rainbow {
+0% {background-color: #ff0000;}
+10% {background-color: #ff8000;}
+20% {background-color: #ffff00;}
+30% {background-color: #80ff00;}
+40% {background-color: #00ff00;}
+50% {background-color: #00ff80;}
+60% {background-color: #00ffff;}
+70% {background-color: #0080ff;}
+80% {background-color: #0000ff;}
+90% {background-color: #8000ff;}
+100% {background-color: #ff0080;}
+}
+@-ms-keyframes rainbow {
+0% {background-color: #ff0000;}
+10% {background-color: #ff8000;}
+20% {background-color: #ffff00;}
+30% {background-color: #80ff00;}
+40% {background-color: #00ff00;}
+50% {background-color: #00ff80;}
+60% {background-color: #00ffff;}
+70% {background-color: #0080ff;}
+80% {background-color: #0000ff;}
+90% {background-color: #8000ff;}
+100% {background-color: #ff0080;}
+}
+@-o-keyframes rainbow {
+0% {background-color: #ff0000;}
+10% {background-color: #ff8000;}
+20% {background-color: #ffff00;}
+30% {background-color: #80ff00;}
+40% {background-color: #00ff00;}
+50% {background-color: #00ff80;}
+60% {background-color: #00ffff;}
+70% {background-color: #0080ff;}
+80% {background-color: #0000ff;}
+90% {background-color: #8000ff;}
+100% {background-color: #ff0080;}
+}
+@keyframes rainbow {
+0% {background-color: #ff0000;}
+10% {background-color: #ff8000;}
+20% {background-color: #ffff00;}
+30% {background-color: #80ff00;}
+40% {background-color: #00ff00;}
+50% {background-color: #00ff80;}
+60% {background-color: #00ffff;}
+70% {background-color: #0080ff;}
+80% {background-color: #0000ff;}
+90% {background-color: #8000ff;}
+100% {background-color: #ff0080;}
 }
