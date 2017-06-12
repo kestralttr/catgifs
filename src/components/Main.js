@@ -11,7 +11,6 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
 
     let img = document.getElementById("main-gif");
     let button = document.getElementById("new-gif-button");
@@ -40,7 +39,6 @@ class Main extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log("newProps: ", newProps);
     if(this.props.state.main.gifURL === null && newProps.state.main.gifURL !== null) {
       let img = document.getElementById("main-gif");
       let button = document.getElementById("new-gif-button");
@@ -65,7 +63,6 @@ class Main extends React.Component {
 
   generateNewGIF(e) {
     e.preventDefault();
-    console.log(this.props);
 
     let rand = Math.floor(Math.random()*4998);
     let spinner = document.getElementById("cat-frame-background");
