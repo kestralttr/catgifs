@@ -152,12 +152,6 @@ animation:rainbow 1s infinite;
     background-size: contain;
     width:150px;
   }
-  /*#drawers-spacer {
-    height:100px;
-  }
-  #main-container {
-    height: 100%;
-  }*/
 }
 
 @media (max-width:620px) {
