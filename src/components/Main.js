@@ -80,7 +80,7 @@ class Main extends React.Component {
       <div id="main-container">
         <div id="main-title"></div>
         <img id="main-gif" alt="Cat Pic"/><br></br>
-        <button onClick={this.generateNewGIF} id="new-gif-button">New GIF!</button>
+        <button className="shine" onClick={this.generateNewGIF} id="new-gif-button">New GIF!</button>
         <div id="drawers-spacer"></div>
         <div id="drawers">
           <img id="cat-frame-background" alt=""></img>
