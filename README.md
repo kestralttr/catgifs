@@ -54,7 +54,7 @@ Unfortunately, further testing revealed that while the total_count parameter doe
 
 #### Use a random number between 0 and 4998
 
-After discovering that the API's highest accepted offset value was 4998, I chose to simply select a random number, which would result in a very low probability of recently repeated gifs appearing in on application.
+After discovering that the Giphy API's highest accepted offset value was 4998, I chose to simply select a random number, which would result in a very low probability of recently repeated gifs appearing in the application.
 
 In addition, this approach would keep the application simple and fast, ensuring requests were as streamlined as possible.
 
@@ -62,13 +62,13 @@ In addition, this approach would keep the application simple and fast, ensuring 
 
 All state changes in this application are handled from within the Redux store.  Requesting a new gif dispatches an action that holds a Fetch API request.  This request is caught in the middleware, where it is fired and waits for returning data.  When data is returned, another action is dispatched, which is caught in the reducer and updates the state with a pure function.
 
-ReactJS then uses the returned state to determine what elements need to be modified, and updates the gif src parameter accordingly.
+ReactJS then uses the returned state to determine what elements need to be modified, and updates the gif source parameter accordingly.
 
 ## Additional Features
 
 I noticed that depending on the speed of the internet connection, the response time of the Giphy API, and the size of the incoming gif, the user might have to wait a second or two until the new gif arrives.  
 
-To ensure the user knows that a new gif is on its way, I added a variation of a traditional loading spinner that uses a CSS keyframe animation to rapidly change the colors of an existing page element.  This animation starts as soon as a new gif is requested and ceases once it loads, letting a waiting user know that their request is processing.
+To ensure the user knows that a new gif is on its way, I added a variation of a traditional loading spinner by using a CSS keyframe animation to rapidly change the colors of an existing page element.  This animation starts as soon as a new gif is requested and ceases once it loads, letting a waiting user know that their request is processing.
 
 ## Styling
 
@@ -76,8 +76,8 @@ I decided to design this web application to look exactly like the interior wall 
 
 The main gif is surrounded by a gilded frame border, which makes it look like a featured masterpiece.  The button to request a new gif takes the form of a miniature metal plaque underneath the gif, and performs a sweeping shine animation upon mouse hover.
 
-In addition, a image of a chest of drawers is fixed to the bottom of the page.  This not only adds to the atmosphere of the webpage, but also serves as a base for the gif loading spinner, which takes the form of a cat-themed picture frame.  As discussed earlier, the background of this spinner rapidly changes color to signify that a new gif is in the process of being loaded.
+In addition, an image of a chest of drawers is fixed to the bottom of the page.  This not only adds to the atmosphere of the webpage, but also serves as a base for the gif loading spinner, which takes the form of a cat-themed picture frame.  As discussed earlier, the background of this spinner rapidly changes color to signify that a new gif is in the process of being loaded.
 
-Upon arriving at the page or refreshing it, all elements (aside from the background and title) have zero opacity until the first gif is loaded, to prevent elements from jumping around as they load.  Once the first gif loads, these page fade in.
+Upon arriving at the page or refreshing it, all elements (aside from the background and title) have zero opacity until the first gif is loaded, to prevent elements from jumping around as they load.  Once the first gif loads, these elements fade in.
 
 All images (wallpaper, button, title, picture frames, furniture, etc) were processed in Adobe Photoshop to ensure they were appropriately sized and displayed.

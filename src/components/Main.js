@@ -16,7 +16,7 @@ class Main extends React.Component {
     let button = document.getElementById("new-gif-button");
     let drawers = document.getElementById("drawers");
 
-    // page elements' opacity set to zero until first gif loads
+    // page elements' opacity set to zero until initial gif loads
     drawers.style.opacity = 0;
     button.style.opacity = 0;
     img.style.opacity = 0;
@@ -28,7 +28,7 @@ class Main extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    // first gif load
+    // initial gif load
     if(this.props.state.main.gifURL === null && newProps.state.main.gifURL !== null) {
       let img = document.getElementById("main-gif");
       img.src = newProps.state.main.gifURL;
