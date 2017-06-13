@@ -40,7 +40,7 @@ However, this would likely require user authentication, which would make this ap
 
 Cookies could be used to keep track of queried data for a given browser.  A browser cookie can hold up to 4000 bytes, and updating it every time a request is made could keep a running log of recent activity.
 
-As far as how we could store this data, values referring to the pagination parameters (offset,length) are small and would allow us to keep track of which gifs we had recently seen.  However, since Giphy's database is dynamic, these values would become useless as soon as a new cat gif was uploaded.  
+As far as how we could store this data, values referring to the pagination parameters (offset, length) are small and would allow us to keep track of which gifs we had recently seen.  However, since Giphy's database is dynamic, these values would become useless as soon as a new cat gif was uploaded.  
 
 While we could store ID numbers of recent gifs in the cookie, these numbers are around 12-14 characters in length, which would mean our cookie would only be able to keep track of around 300 recent gifs (assuming that each character would take up 1 byte of space in a cookie with a max limit of 4000 bytes).
 
