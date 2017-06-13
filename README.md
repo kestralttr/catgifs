@@ -78,6 +78,6 @@ The main gif is surrounded by a gilded frame border, which makes it look like a 
 
 In addition, a image of a chest of drawers is fixed to the bottom of the page.  This not only adds to the atmosphere of the webpage, but also serves as a base for the gif loading spinner, which takes the form of a cat-themed picture frame.  As discussed earlier, the background of this spinner rapidly changes color to signify that a new gif is in the process of being loaded.
 
-Upon arriving at the page or refreshing it, all elements have zero opacity until the first gif is loaded, to prevent elements from jumping around as they load.
+Upon arriving at the page or refreshing it, all elements (aside from the background and title) have zero opacity until the first gif is loaded, to prevent elements from jumping around as they load.  Once the first gif loads, these page fade in.
 
 All images (wallpaper, button, title, picture frames, furniture, etc) were processed in Adobe Photoshop to ensure they were appropriately sized and displayed.

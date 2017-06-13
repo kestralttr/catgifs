@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 
 class Main extends React.Component {
 
@@ -22,32 +23,16 @@ class Main extends React.Component {
 
     this.props.requestGIF(rand);
 
-    // let rand = Math.floor(Math.random()*4998);
-    // let gifURL;
-    //
-    // fetch("http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC&limit=1&offset=" + rand.toString())
-    // .then((response) => {
-    //   return response.json();})
-    // .then((json) => {
-    //   gifURL = json.data[0].images.original.url;
-    //   img.src = gifURL;
-    //   img.onload = function() {
-    //     img.style.opacity = 1;
-    //   };
-    // });
-
   }
 
   componentWillReceiveProps(newProps) {
     if(this.props.state.main.gifURL === null && newProps.state.main.gifURL !== null) {
       let img = document.getElementById("main-gif");
-      let button = document.getElementById("new-gif-button");
-      let drawers = document.getElementById("drawers");
       img.src = newProps.state.main.gifURL;
       img.onload = () => {
-        img.style.opacity = 1;
-        button.style.opacity = 1;
-        drawers.style.opacity = 1;
+        $( "#main-gif" ).fadeTo( "slow" , 1 );
+        $( "#new-gif-button" ).fadeTo( "slow" , 1 );
+        $( "#drawers" ).fadeTo( "slow" , 1 );
       };
       return;
     }
