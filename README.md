@@ -2,7 +2,7 @@
 
 ## Run Guide
 
-In order to run this project locally, download files, then enter the following scripts in the command line:
+In order to run this project locally, download the files, then enter the following scripts in the command line:
 
 npm install
 
@@ -21,7 +21,7 @@ The following technologies should be used:
 - React-Router
 - Fetch API
 - Giphy API
-- ECMAScript 2015 Language
+- ECMAScript 2015
 
 
 ## Initial Plan
