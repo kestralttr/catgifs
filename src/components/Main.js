@@ -6,7 +6,6 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
     };
     this.generateNewGIF = this.generateNewGIF.bind(this);
   }
@@ -16,19 +15,25 @@ class Main extends React.Component {
     let img = document.getElementById("main-gif");
     let button = document.getElementById("new-gif-button");
     let drawers = document.getElementById("drawers");
+
+    // page elements' opacity set to zero until first gif loads
     drawers.style.opacity = 0;
     button.style.opacity = 0;
     img.style.opacity = 0;
-    let rand = Math.floor(Math.random()*4998);
 
+    //random number used to select offset value
+    let rand = Math.floor(Math.random()*4998);
     this.props.requestGIF(rand);
 
   }
 
   componentWillReceiveProps(newProps) {
+    // first gif load
     if(this.props.state.main.gifURL === null && newProps.state.main.gifURL !== null) {
       let img = document.getElementById("main-gif");
       img.src = newProps.state.main.gifURL;
+
+      // page elements fade in upon initial gif load completion
       img.onload = () => {
         $( "#main-gif" ).fadeTo( "slow" , 1 );
         $( "#new-gif-button" ).fadeTo( "slow" , 1 );
@@ -36,10 +41,12 @@ class Main extends React.Component {
       };
       return;
     }
+    //every subsequent gif load
     if(newProps.state.main.gifURL && newProps.state.main.gifURL !== this.props.state.main.gifURL) {
       let img = document.getElementById("main-gif");
       img.src = newProps.state.main.gifURL;
       img.onload = function() {
+        //spinner deactivated
         let spinner = document.getElementById("cat-frame-background");
         spinner.className = "";
       };
@@ -49,9 +56,12 @@ class Main extends React.Component {
   generateNewGIF(e) {
     e.preventDefault();
 
-    let rand = Math.floor(Math.random()*4998);
+    //spinner activated
     let spinner = document.getElementById("cat-frame-background");
     spinner.className = "rainbow";
+
+    //random number used to select offset value
+    let rand = Math.floor(Math.random()*4998);
     this.props.requestGIF(rand);
 
   }
